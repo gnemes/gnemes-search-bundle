@@ -56,7 +56,7 @@ class DefaultController extends Controller
             ->setAction($this->generateUrl('gnemes_search_homepage'))
             ->setMethod('POST')    
             ->add(
-                'name', 
+                'needle', 
                 TextType::class, 
                 array(
                     'label' => 'Text to search'
