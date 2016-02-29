@@ -19,6 +19,16 @@
             <h1>
             {{gnemes.title}}
             </h1>
+            
+            {{ form_start(form) }}
+            <div class="control-group">
+                <h3>Text to search</h3>
+                <div class="controls">
+                        {{ form_row(form.needle, { 'attr': {'class': 'form-control input-lg', 'placeholder': 'Text to search'} }) }}
+                </div>
+            </div>
+            {{ form_rest(form) }}
+            {{ form_end(form) }}
         {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
