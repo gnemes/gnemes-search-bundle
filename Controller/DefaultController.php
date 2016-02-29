@@ -59,7 +59,7 @@ class DefaultController extends Controller
                 'needle', 
                 TextType::class, 
                 array(
-                    'label' => 'Text to search'
+                    'label' => false
                 )
             )
             ->add('save', SubmitType::class, array('label' => 'Search'))
