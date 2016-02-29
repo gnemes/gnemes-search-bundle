@@ -1,0 +1,30 @@
+{
+    "name" : "Gnemes/SearchBundle",
+    "description" : "A symfony bundle to search text in files",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "gnemes",
+        "email" : "gnemes@gmail.com"
+    }],
+    "keywords" : [
+        "searchbundle"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Gnemes\\SearchBundle" : ""
+        }
+    },
+    "target-dir" : "Gnemes/SearchBundle",
+    "repositories" : [{
+    }],
+    "extra" : {
+    "branch-alias" : {
+            "dev-master" : "0.0.1-dev"
+        }
+    }
+}
