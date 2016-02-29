@@ -1,1 +1,25 @@
-Gnemes Bundle saying Hello World!
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Gnemes Search{% endblock %}</title>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="German Nemes">
+        <meta name="keywords" content="Search, Gnemes">
+        <meta name="robots" content="all">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        {% block stylesheets %}{% endblock %}
+        
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+
+    <body>
+        {% block body %}
+            <h1>
+            {{gnemes.title}}
+            </h1>
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

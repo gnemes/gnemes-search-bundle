@@ -8,6 +8,14 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('GnemesSearchBundle:Default:index.html.twig');
+        $params = array();
+        $params["gnemes"] = array(
+            "title" => "Gnemes text in file search engine",
+        );
+        
+        return $this->render(
+            'GnemesSearchBundle:Default:index.html.twig', 
+            $params
+        );
     }
 }
