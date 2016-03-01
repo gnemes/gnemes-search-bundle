@@ -44,7 +44,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * @license   GNU GPL v3
  * @link      https://github.com/gnemes/aprildesign
  */
-class GreetCommand extends ContainerAwareCommand
+class SearchCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
