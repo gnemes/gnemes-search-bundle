@@ -75,8 +75,8 @@ class SearchCommand extends ContainerAwareCommand
     {
         $text = $input->getArgument('text');
         if ($text) {
-            $Controller = $this->getContainer()->get('gnemes.search.controller');
-            $response = $Controller->indexAction();
+            $search = $this->getContainer()->get('gnemes.search.controller');
+            $response = $search->indexAction();
             $text = 'This is the response: '.$response;
         } else {
             $text = 'You have to tell me what do you want to search.';

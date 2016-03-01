@@ -68,7 +68,10 @@ class DefaultController extends Controller
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) {
-            echo "ou yeah!";
+            $search = $this->get("gnemes.search.controller");
+            $response = $search->indexAction();
+            $text = 'This is the response: '.$response;
+            echo "ou yeah! ".$text;
         }
         
         // Template vars
