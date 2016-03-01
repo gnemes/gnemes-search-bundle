@@ -10,7 +10,7 @@ Features include:
 - Unit tested
 
 Installation
-------------
+============
 
 This bundle is under development, so for now you have to add the github repository to your composer.json file:
 
@@ -28,12 +28,12 @@ And then just add the dependency in the require section:
 ```
 
 Usage
------
+=====
 
 You can use it from its web interface or via console command
 
 From UI
-=======
+-------
 
 Link the web/ folder to your document root. For example 
 
@@ -50,7 +50,7 @@ And then browse to
 Here enter the text you want to search in the form.
 
 From Console
-============
+------------
 
 Use this command to search
 
