@@ -31,7 +31,6 @@ namespace Gnemes\SearchBundle\Command;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -46,36 +45,41 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class SearchCommand extends ContainerAwareCommand
 {
+    /**
+     * Configure command interface
+     * 
+     * @return void
+     */
     protected function configure()
     {
         $this
             ->setName('gnemes:search')
-            ->setDescription('Greet someone')
+            ->setDescription('Search text')
             ->addArgument(
-                'name',
+                'text',
                 InputArgument::OPTIONAL,
-                'Who do you want to greet?'
-            )
-            ->addOption(
-                'yell',
-                null,
-                InputOption::VALUE_NONE,
-                'If set, the task will yell in uppercase letters'
+                'What do you want to search?'
             )
         ;
     }
     
+    /**
+     * Executes command
+     * 
+     * @param InputInterface $input   Command input
+     * @param OutputInterface $output Command output
+     * 
+     * @return String
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $name = $input->getArgument('name');
-        if ($name) {
-            $text = 'Hello '.$name;
+        $text = $input->getArgument('text');
+        if ($text) {
+            $Controller = $this->getContainer()->get('gnemes.search.controller');
+            $response = $Controller->indexAction();
+            $text = 'This is the response: '.$response;
         } else {
-            $text = 'Hello';
-        }
-
-        if ($input->getOption('yell')) {
-            $text = strtoupper($text);
+            $text = 'You have to tell me what do you want to search.';
         }
 
         $output->writeln($text);

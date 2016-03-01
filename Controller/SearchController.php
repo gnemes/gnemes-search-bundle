@@ -29,10 +29,8 @@
 namespace Gnemes\SearchBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Gnemes\SearchBundle\Entity\Needle;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**
  * Gnemes Search Bundle controller Class
@@ -44,44 +42,14 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
  * @license   GNU GPL v3
  * @link      https://github.com/gnemes/aprildesign
  */
-class DefaultController extends Controller
+class SearchController extends Controller
 {
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-        // Init needle entity
-        $needle = new Needle();
-        
-        // Create form
-        $form = $this->createFormBuilder($needle)
-            ->setAction($this->generateUrl('gnemes_search_homepage'))
-            ->setMethod('POST')    
-            ->add(
-                'needle', 
-                TextType::class, 
-                array(
-                    'label' => false
-                )
-            )
-            ->add('save', SubmitType::class, array('label' => 'Search'))
-            ->getForm();
-        
-        $form->handleRequest($request);
-        
-        if ($form->isSubmitted() && $form->isValid()) {
-            echo "ou yeah!";
-        }
-        
-        // Template vars
-        $page = array(
-            "title" => "Gnemes text in file search engine",
+        $response = array(
+            "status" => "success",
         );
         
-        return $this->render(
-            'GnemesSearchBundle:Default:index.html.twig', 
-            array(
-                'form' => $form->createView(),
-                'gnemes' => $page,
-            )
-        );
+        return new JsonResponse($response);
     }
 }
