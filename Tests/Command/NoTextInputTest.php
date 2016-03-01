@@ -52,7 +52,7 @@ class NoTextInputTest extends KernelTestCase
              )
         );
 
-        $this->assertRegExp('/You have to tell me what do you want to serch./', $commandTester->getDisplay());
+        $this->assertRegExp('/You have to tell me what do you want to search./', $commandTester->getDisplay());
 
         // ...
     }
