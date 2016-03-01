@@ -30,12 +30,16 @@ namespace Tests\Gnemes\SearchBundle\Command;
 
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Gnemes\SearchBundle\Command\SearchCommand;
 
-class NoTextInputTest extends \PHPUnit_Framework_TestCase
+class NoTextInputTest extends KernelTestCase
 {
     public function testExecute()
     {
+        $kernel = $this->createKernel();
+        $kernel->boot();
+        
         // mock the Kernel or create one depending on your needs
         $application = new Application($kernel);
         $application->add(new SearchCommand());
