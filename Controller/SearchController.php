@@ -28,7 +28,7 @@
 
 namespace Gnemes\SearchBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -42,9 +42,9 @@ use Symfony\Component\HttpFoundation\Request;
  * @license   GNU GPL v3
  * @link      https://github.com/gnemes/aprildesign
  */
-class SearchController extends Controller
+class SearchController extends ContainerAware
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $source = $this->container->getParameter('gnemes.search.source');
         
