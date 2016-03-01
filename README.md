@@ -26,3 +26,34 @@ And then just add the dependency in the require section:
 ```json
     "gnemes/searchbundle": "dev-master"
 ```
+
+Usage
+-----
+
+You can use it from its web interface or via console command
+
+From UI
+=======
+
+Link the web/ folder to your document root. For example 
+
+```bash
+    ln -s /path/to/your/project/web /path/to/htdocs/search
+```
+
+And then browse to
+
+```json
+    http://<IP_ADDR>/search/gnemes/
+```
+
+Here enter the text you want to search in the form.
+
+From Console
+============
+
+Use this command to search
+
+```bash
+    php bin/console gnemes:search "Text you want to search"
+```

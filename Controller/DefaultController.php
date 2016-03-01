@@ -46,6 +46,13 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
  */
 class DefaultController extends Controller
 {
+    /**
+     * Main action
+     * 
+     * @param Request $request Symfony request
+     * 
+     * @return Twig template
+     */
     public function indexAction(Request $request)
     {
         // Init needle entity
