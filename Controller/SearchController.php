@@ -46,7 +46,7 @@ class SearchController extends Controller
 {
     public function indexAction()
     {
-        $source = $this->getContainer()->getParameter('gnemes.search.source');
+        $source = $this->container->getParameter('gnemes.search.source');
         
         $response = array(
             "status" => "success",
