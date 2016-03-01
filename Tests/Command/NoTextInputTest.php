@@ -48,7 +48,7 @@ class NoTextInputTest extends KernelTestCase
         $commandTester = new CommandTester($command);
         $commandTester->execute(
             array(
-                'name'    => '',
+                'text' => '',
              )
         );
 
