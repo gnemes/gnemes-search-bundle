@@ -55,6 +55,8 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+        echo $this->container->getParameter('source');
+        
         // Init needle entity
         $needle = new Needle();
         

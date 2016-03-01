@@ -30,7 +30,6 @@ namespace Gnemes\SearchBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Gnemes Search Bundle controller Class
@@ -44,7 +43,7 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class SearchController extends Controller
 {
-    public function indexAction(Request $request)
+    public function indexAction()
     {
         $source = $this->container->getParameter('gnemes.search.source');
         
