@@ -46,8 +46,11 @@ class SearchController extends Controller
 {
     public function indexAction()
     {
+        $source = $this->getContainer()->getParameter('gnemes.search.source');
+        
         $response = array(
             "status" => "success",
+            "source" => $source,
         );
         
         return new JsonResponse($response);
