@@ -42,8 +42,8 @@ use Gnemes\SearchBundle\Interfaces\ProviderInterface;
  */
 class ProviderElastic implements ProviderInterface
 {
-    public function search(\string $text)
+    public function search($text)
     {
-        return "Searching on Elastic";
+        return "Searching on Elastic: ".$text;
     }
 }

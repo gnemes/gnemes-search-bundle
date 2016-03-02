@@ -42,8 +42,8 @@ use Gnemes\SearchBundle\Interfaces\ProviderInterface;
  */
 class ProviderOrm implements ProviderInterface
 {
-    public function search(\string $text)
+    public function search($text)
     {
-        return "Searching on ORM";
+        return "Searching on ORM: ".$text;
     }    
 }
