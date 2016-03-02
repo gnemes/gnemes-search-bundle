@@ -20,12 +20,22 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('gnemes_search');
 
+        $supportedSources = array('orm', 'elastic');
+        
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
         // more information on that topic.
         $rootNode
             ->children()
-                ->integerNode('source')->end()
+                ->scalarNode('source')
+                    ->validate()
+                        ->ifNotInArray($supportedSources)
+                        ->thenInvalid('The source %s is not supported. Please choose one of '.json_encode($supportedSources))
+                    ->end()
+                    ->cannotBeOverwritten()
+                    ->isRequired()
+                    ->cannotBeEmpty()
+                ->end()
             ->end()
         ;
         
