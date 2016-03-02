@@ -40,9 +40,15 @@ namespace Gnemes\SearchBundle\Search;
  */
 class SearchManager
 {
-    public function search($source)
+    protected $source;
+    
+    public function __construct($source) {
+        $this->source = $source;
+    }
+    
+    public function search()
     {
-        echo json_encode($source);
+        echo json_encode($this->source);
         
         $response = array(
             "status" => "success",
