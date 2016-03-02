@@ -6,7 +6,7 @@
 
     <services>
         <service id="gnemes.search.manager" class="Gnemes\SearchBundle\Search\SearchManager"> 
-            <argument>%source%</argument>
+            <argument>%gnemes_search.source%</argument>
         </service>
     </services>
     
