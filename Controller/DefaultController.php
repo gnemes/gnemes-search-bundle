@@ -76,7 +76,7 @@ class DefaultController extends Controller
         
         if ($form->isSubmitted() && $form->isValid()) {
             $search = $this->get("searcher");
-            $response = $search->search();
+            $response = $search->search($needle->getNeedle());
             $text = 'This is the response: '.$response;
             echo "ou yeah! ".$text;
         }

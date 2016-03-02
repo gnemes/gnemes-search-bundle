@@ -18,7 +18,7 @@
  *
  * PHP VERSION 5.6
  *
- * @category  Bundle/Provider
+ * @category  Bundle/Interface
  * @package   GnemesSearchBundle
  * @author    German Nemes <gnemes@gmail.com>
  * @copyright 2016 German Nemes
@@ -26,41 +26,25 @@
  * @link      https://github.com/gnemes/aprildesign
  */
 
-namespace Gnemes\SearchBundle\Provider;
-
-use Gnemes\SearchBundle\Provider\ProviderOrm;
-use Gnemes\SearchBundle\Provider\ProviderElastic;
+namespace Gnemes\SearchBundle\Interfaces;
 
 /**
- * Gnemes Search Bundle command Class
+ * Gnemes Search Provider interface
  *
- * @category  Bundle/Provider
+ * @category  Bundle/Interface
  * @package   GnemesSearchBundle
  * @author    German Nemes <gnemes@gmail.com>
  * @copyright 2016 German Nemes
  * @license   GNU GPL v3
  * @link      https://github.com/gnemes/aprildesign
  */
-class ProviderFactory
-{
+interface ProviderInterface {
     /**
-     * Provider factory method
+     * Search text
      * 
-     * @param String $source Source
+     * @param String $text Text to search for
      * 
-     * @return Mixed
+     * @return JSON
      */
-    public static function create($source)
-    {
-        switch ($source) {
-            case "orm":
-                $provider = new ProviderOrm();
-                break;
-            default:
-                $provider = new ProviderElastic();
-                break;
-        }
-        
-        return $provider;
-    }
+    public function search(\String $text);
 }

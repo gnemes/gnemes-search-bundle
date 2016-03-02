@@ -28,6 +28,8 @@
 
 namespace Gnemes\SearchBundle\Search;
 
+use Gnemes\SearchBundle\Provider\ProviderFactory;
+
 /**
  * Gnemes Search Bundle controller Class
  *
@@ -40,17 +42,37 @@ namespace Gnemes\SearchBundle\Search;
  */
 class SearchManager
 {
+    /**
+     * Source to search ["orm", "elastic"]
+     *
+     * @var string 
+     */
     protected $source;
     
+    /**
+     * Constructor
+     * 
+     * @param String $source Source to search
+     * 
+     * @return Void
+     */
     public function __construct($source) {
         $this->source = $source;
     }
     
-    public function search()
+    /**
+     * Search
+     * 
+     * @return JSON
+     */
+    public function search($text)
     {
+        $provider = ProviderFactory::create($this->source);
+        
         $response = array(
             "status" => "success",
             "source" => $this->source,
+            "response" => $provider->search($text),
         );
         
         return json_encode($response);

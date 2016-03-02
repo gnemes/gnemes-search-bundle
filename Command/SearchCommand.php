@@ -76,7 +76,7 @@ class SearchCommand extends ContainerAwareCommand
         $text = $input->getArgument('text');
         if ($text) {
             $search = $this->getContainer()->get('searcher');
-            $response = $search->search();
+            $response = $search->search($text);
             $text = 'This is the response: '.$response;
         } else {
             $text = 'You have to tell me what do you want to search.';

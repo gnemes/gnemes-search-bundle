@@ -28,11 +28,10 @@
 
 namespace Gnemes\SearchBundle\Provider;
 
-use Gnemes\SearchBundle\Provider\ProviderOrm;
-use Gnemes\SearchBundle\Provider\ProviderElastic;
+use Gnemes\SearchBundle\Interfaces\ProviderInterface;
 
 /**
- * Gnemes Search Bundle command Class
+ * Gnemes Search Elastic Provider
  *
  * @category  Bundle/Provider
  * @package   GnemesSearchBundle
@@ -41,26 +40,10 @@ use Gnemes\SearchBundle\Provider\ProviderElastic;
  * @license   GNU GPL v3
  * @link      https://github.com/gnemes/aprildesign
  */
-class ProviderFactory
+class ProviderElastic implements ProviderInterface
 {
-    /**
-     * Provider factory method
-     * 
-     * @param String $source Source
-     * 
-     * @return Mixed
-     */
-    public static function create($source)
+    public function search(\String $text)
     {
-        switch ($source) {
-            case "orm":
-                $provider = new ProviderOrm();
-                break;
-            default:
-                $provider = new ProviderElastic();
-                break;
-        }
-        
-        return $provider;
+        return "Searching on Elastic";
     }
 }
