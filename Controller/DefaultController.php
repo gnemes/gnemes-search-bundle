@@ -75,7 +75,7 @@ class DefaultController extends Controller
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) {
-            $search = $this->get("gnemes.search.manager");
+            $search = $this->get("searcher");
             $response = $search->search();
             $text = 'This is the response: '.$response;
             echo "ou yeah! ".$text;
