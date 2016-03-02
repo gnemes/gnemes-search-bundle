@@ -42,7 +42,7 @@ use Gnemes\SearchBundle\Interfaces\ProviderInterface;
  */
 class ProviderElastic implements ProviderInterface
 {
-    public function search(\String $text)
+    public function search(\string $text)
     {
         return "Searching on Elastic";
     }

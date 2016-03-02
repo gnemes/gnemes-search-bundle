@@ -46,5 +46,5 @@ interface ProviderInterface {
      * 
      * @return JSON
      */
-    public function search(\String $text);
+    public function search(\string $text);
 }
