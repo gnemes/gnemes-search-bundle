@@ -5,8 +5,9 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="gnemes.search.manager" class="Gnemes\SearchBundle\Search\SearchManager" />
-        <argument>%gnemes_search_source%</argument>
+        <service id="gnemes.search.manager" class="Gnemes\SearchBundle\Search\SearchManager"> 
+            <argument>%gnemes_search_source%</argument>
+        </service>
     </services>
     
     <!--

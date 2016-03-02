@@ -45,7 +45,7 @@ class SearchManager
         
         $response = array(
             "status" => "success",
-            "source" => "TBD",
+            "source" => $source,
         );
         
         return json_encode($response);
