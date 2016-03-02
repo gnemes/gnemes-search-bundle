@@ -40,7 +40,7 @@ namespace Gnemes\SearchBundle\Search;
  */
 class SearchManager
 {
-    public function search()
+    public function search($source)
     {
         
         $response = array(
