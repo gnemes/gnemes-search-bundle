@@ -48,11 +48,9 @@ class SearchManager
     
     public function search()
     {
-        echo json_encode($this->source);
-        
         $response = array(
             "status" => "success",
-            "source" => $source,
+            "source" => $this->source,
         );
         
         return json_encode($response);

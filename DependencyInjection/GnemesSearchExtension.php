@@ -27,6 +27,6 @@ class GnemesSearchExtension extends Extension
         
         $container
             ->register('searcher', 'Gnemes\SearchBundle\Search\SearchManager')
-            ->addArgument($config);
+            ->addArgument($config["source"]);
     }
 }
