@@ -27,6 +27,13 @@ And then just add the dependency in the require section:
     "gnemes/searchbundle": "dev-master"
 ```
 
+Then you must add the bundle configuration in your config.yml file:
+
+```yml
+gnemes_search:
+    source: orm # orm or elastic
+```
+
 Usage
 =====
 
