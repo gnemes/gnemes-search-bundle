@@ -26,10 +26,7 @@
  * @link      https://github.com/gnemes/aprildesign
  */
 
-namespace Gnemes\SearchBundle\Controller;
-
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\JsonResponse;
+namespace Gnemes\SearchBundle\Search;
 
 /**
  * Gnemes Search Bundle controller Class
@@ -41,17 +38,16 @@ use Symfony\Component\HttpFoundation\JsonResponse;
  * @license   GNU GPL v3
  * @link      https://github.com/gnemes/aprildesign
  */
-class SearchController extends Controller
+class SearchManager
 {
-    public function indexAction()
+    public function search()
     {
-        $source = $this->container->getParameter('gnemes.search.source');
         
         $response = array(
             "status" => "success",
-            "source" => $source,
+            "source" => "TBD",
         );
         
-        return new JsonResponse($response);
+        return json_encode($response);
     }
 }

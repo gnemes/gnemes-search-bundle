@@ -55,8 +55,6 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        echo $this->container->getParameter('source');
-        
         // Init needle entity
         $needle = new Needle();
         
@@ -77,8 +75,8 @@ class DefaultController extends Controller
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) {
-            $search = $this->get("gnemes.search.controller");
-            $response = $search->indexAction();
+            $search = $this->get("gnemes.search.manager");
+            $response = $search->search();
             $text = 'This is the response: '.$response;
             echo "ou yeah! ".$text;
         }
