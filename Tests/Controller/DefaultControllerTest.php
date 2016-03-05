@@ -2,15 +2,16 @@
 
 namespace Gnemes\SearchBundle\Tests\Controller;
 
+use Gnemes\SearchBundle\Tests\Fixtures\app\AppKernel;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class DefaultControllerTest extends WebTestCase
 {
     protected function setUp()
     {
-        require_once __DIR__.'/../Fixtures/app/AppKernel.php';
+        //require_once __DIR__.'/../Fixtures/app/AppKernel.php';
 
-        $kernel = new \AppKernel('', true);
+        $kernel = new AppKernel('', true);
         $kernel->boot();
         /*
         $container = $kernel->getContainer();

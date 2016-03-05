@@ -26,7 +26,7 @@
  * @link      https://github.com/gnemes/aprildesign
  */
 
-namespace Gnemes\SearchBundle\Tests\app;
+namespace Gnemes\SearchBundle\Tests\Fixtures\app;
 
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
