@@ -38,7 +38,7 @@ EOT;
     exit(1);
 }
 
-require_once __DIR__.'/Fixtures/app/AppKernel.php';
+use Gnemes\SearchBundle\Tests\Fixtures\app\AppKernel;
 
 $kernel = new AppKernel('', true); // create a "test" kernel
 $kernel->boot();
