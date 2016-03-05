@@ -41,7 +41,7 @@ class AppKernel extends Kernel
     public function registerBundles()
     {   
         return array(
-            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+            new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             
             new Gnemes\SearchBundle\GnemesSearchBundle(),
         );
