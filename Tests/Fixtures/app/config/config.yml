@@ -8,4 +8,7 @@ framework:
     profiler:        { only_exceptions: false }
     test: ~
     session:
-        storage_id: session.storage.filesystem    
+        storage_id: session.storage.filesystem 
+        
+gnemes_search:
+    source: orm
