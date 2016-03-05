@@ -20,7 +20,7 @@
     </filter>
     
     <php>
+         <server name="KERNEL_DIR" value="./Tests/app/" />
          <ini name="display_errors" value="true"/>
-         <server name="KERNEL_DIR" value="./Tests/app" />
     </php>
 </phpunit>
