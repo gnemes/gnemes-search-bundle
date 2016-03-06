@@ -13,10 +13,12 @@
             <directory>./Tests/</directory>
             <exclude>
                 <directory>./Resources/</directory>
-                <directory>./Tests/</directory>
-                <directory suffix=".php">./vendor/</directory>
             </exclude>
         </whitelist>
+        <blacklist>
+            <directory>./Tests/</directory>
+            <directory>./vendor/</directory>
+        </blacklist>
     </filter>
     
     <php>
