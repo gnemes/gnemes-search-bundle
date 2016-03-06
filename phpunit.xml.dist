@@ -16,6 +16,7 @@
             </exclude>
         </whitelist>
         <blacklist>
+            <directory>./Fixtures/</directory>
             <directory>./Tests/</directory>
             <directory>./vendor/</directory>
         </blacklist>
