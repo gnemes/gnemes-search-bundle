@@ -1,0 +1,3 @@
+gnemes_search:
+    resource: "@GnemesSearchBundle/Resources/config/routing.xml"
+    prefix: /gnemes
