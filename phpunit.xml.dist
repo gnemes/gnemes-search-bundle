@@ -14,7 +14,7 @@
             <exclude>
                 <directory>./Resources/</directory>
                 <directory>./Tests/</directory>
-                <directory>./vendor/</directory>
+                <directory suffix=".php">./vendor/</directory>
             </exclude>
         </whitelist>
     </filter>
