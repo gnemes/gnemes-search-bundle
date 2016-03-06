@@ -47,7 +47,7 @@ class SearchManager
      *
      * @var string 
      */
-    protected $source = "orm";
+    protected $source;
     
     /**
      * Constructor

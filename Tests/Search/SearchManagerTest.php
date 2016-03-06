@@ -8,9 +8,8 @@ class SearchManagerTest extends \PHPUnit_Framework_TestCase
 {
     public function testSearch()
     {
-        $search = new SearchManager("Unit testing");
+        $search = new SearchManager("orm");
 
-        
         $expected = array(
             "status" => "success",
             "source" => "orm",
