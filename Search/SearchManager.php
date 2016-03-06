@@ -47,7 +47,7 @@ class SearchManager
      *
      * @var string 
      */
-    protected $source;
+    protected $source = "orm";
     
     /**
      * Constructor
@@ -67,14 +67,34 @@ class SearchManager
      */
     public function search($text)
     {
-        $provider = ProviderFactory::create($this->source);
+        $provider = $this->getProvider();
         
         $response = array(
             "status" => "success",
-            "source" => $this->source,
+            "source" => $this->getSource(),
             "response" => $provider->search($text),
         );
         
         return json_encode($response);
+    }
+    
+    /**
+     * Get provider
+     * 
+     * @return Provider
+     */
+    public function getProvider()
+    {
+        return ProviderFactory::create($this->getSource());
+    }
+    
+    /**
+     * Return source
+     * 
+     * @return String
+     */
+    public function getSource()
+    {
+        return $this->source;
     }
 }
