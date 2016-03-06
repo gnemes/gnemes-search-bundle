@@ -31,6 +31,6 @@ class DefaultControllerTest extends WebTestCase
          * 
          */
         
-        $this->assertEqual(1,1);
+        $this->assertEquals(1,1);
     }
 }
