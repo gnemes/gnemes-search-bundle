@@ -49,8 +49,6 @@ class Configuration implements ConfigurationInterface
                             ->isRequired()
                             ->cannotBeEmpty()
                             ->end()
-                        ->scalarNode("output_fileds")
-                            ->end()
         ;
         
 
