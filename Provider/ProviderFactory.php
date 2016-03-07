@@ -30,6 +30,7 @@ namespace Gnemes\SearchBundle\Provider;
 
 use Gnemes\SearchBundle\Provider\ProviderOrm;
 use Gnemes\SearchBundle\Provider\ProviderElastic;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Gnemes Search Bundle command Class

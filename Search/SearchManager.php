@@ -28,7 +28,7 @@
 
 namespace Gnemes\SearchBundle\Search;
 
-use Gnemes\SearchBundle\Provider\ProviderFactory;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Gnemes Search Bundle controller Class
