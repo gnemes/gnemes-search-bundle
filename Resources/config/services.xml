@@ -8,15 +8,9 @@
         <service id="gnemes.search.manager" class="Gnemes\SearchBundle\Search\SearchManager">
             <argument>"@service_container"</argument>
         </service>
-    </services>
-    
-    <!--
-    <services>
-        <service id="gnemes_search.example" class="Gnemes\SearchBundle\Example">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        
+        <service id="gnemes.search.provider.factory" class="Gnemes\SearchBundle\Provider\ProviderFactory">
+            <argument>"@service_container"</argument>
         </service>
     </services>
-    -->
 </container>

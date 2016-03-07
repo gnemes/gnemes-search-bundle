@@ -43,6 +43,12 @@ use Gnemes\SearchBundle\Provider\ProviderElastic;
  */
 class ProviderFactory
 {
+    protected $container;
+    
+    public function __construct(ContainerInterface $container) {
+        $this->container = $container;
+    }
+    
     /**
      * Provider factory method
      * 
@@ -50,8 +56,10 @@ class ProviderFactory
      * 
      * @return Mixed
      */
-    public static function create($source)
+    public function create()
     {
+        $source = $this->container->getParameter("gnemes.search.source");
+        
         switch ($source) {
             case "orm":
                 $provider = new ProviderOrm();

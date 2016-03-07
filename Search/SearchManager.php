@@ -56,7 +56,7 @@ class SearchManager
      * 
      * @return Void
      */
-    public function __construct($container) {
+    public function __construct(ContainerInterface $container) {
         $this->container = $container;
     }
     
@@ -85,7 +85,7 @@ class SearchManager
      */
     public function getProvider()
     {
-        return ProviderFactory::create($this->getSource());
+        return $this->get("gnemes.search.provider.factory")->create();
     }
     
     /**
