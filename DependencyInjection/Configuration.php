@@ -37,6 +37,20 @@ class Configuration implements ConfigurationInterface
                     ->cannotBeEmpty()
                 ->end()
             ->end()
+            
+            ->children()
+                ->arrayNode('orm')
+                    ->children()
+                        ->scalarNode("table")
+                            ->isRequired()
+                            ->cannotBeEmpty()
+                            ->end()
+                        ->scalarNode("search_field")
+                            ->isRequired()
+                            ->cannotBeEmpty()
+                            ->end()
+                        ->arrayNode("output_fileds")
+                            ->end()
         ;
         
 
