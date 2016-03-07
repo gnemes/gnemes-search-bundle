@@ -25,9 +25,17 @@ class GnemesSearchExtension extends Extension
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
         
+        /*
         $container
             ->register('searcher', 'Gnemes\SearchBundle\Search\SearchManager')
             ->addArgument($config["source"]);
+        */
+        
+        // Add source
+        $container->setParameter(
+            'gnemes.search.source', 
+            $config['source']
+        );
         
         // Add specific configuration for each type of Provider
         if (isset($config["orm"])) {

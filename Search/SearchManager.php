@@ -43,21 +43,21 @@ use Gnemes\SearchBundle\Provider\ProviderFactory;
 class SearchManager
 {
     /**
-     * Source to search ["orm", "elastic"]
+     * Container
      *
-     * @var string 
+     * @var Container 
      */
-    protected $source;
+    protected $container;
     
     /**
      * Constructor
      * 
-     * @param String $source Source to search
+     * @param Container $container Service container
      * 
      * @return Void
      */
-    public function __construct($source) {
-        $this->source = $source;
+    public function __construct($container) {
+        $this->container = $container;
     }
     
     /**
@@ -95,6 +95,6 @@ class SearchManager
      */
     public function getSource()
     {
-        return $this->source;
+        return $this->container->getParameter("gnemes.search.source");
     }
 }
