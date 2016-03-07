@@ -64,3 +64,30 @@ Use this command to search
 ```bash
     php bin/console gnemes:search "Text you want to search"
 ```
+
+Full text database search (ORM)
+===============================
+
+If you want the bundle to perform a DB fulltext search, there are a few extra
+parameters that you need to set in your config file:
+
+```yml
+gnemes_search:
+    source: orm
+    orm:
+        table: "table_name"
+        search_field: "field_name"
+```
+
+Where:
+
+table_name: Name of the table you want to use in your search.
+
+search_field: Field name of the given table used to search into.
+
+Also, you must configure the database connection parameters as usual.
+
+TODO
+----
+
+Change this to an array, so you could search in multiple tables at once
