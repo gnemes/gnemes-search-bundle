@@ -85,7 +85,7 @@ class SearchManager
      */
     public function getProvider()
     {
-        return $this->get("gnemes.search.provider.factory")->create();
+        return $this->container->get("gnemes.search.provider.factory")->create();
     }
     
     /**
