@@ -49,7 +49,7 @@ class Configuration implements ConfigurationInterface
                             ->isRequired()
                             ->cannotBeEmpty()
                             ->end()
-                        ->arrayNode("output_fileds")
+                        ->scalarNode("output_fileds")
                             ->end()
         ;
         
