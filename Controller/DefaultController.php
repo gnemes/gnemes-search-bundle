@@ -55,7 +55,6 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        echo "Container :: ".var_dump($this->container)."</br>";
         // Init needle entity
         $needle = new Needle();
         

@@ -28,5 +28,20 @@ class GnemesSearchExtension extends Extension
         $container
             ->register('searcher', 'Gnemes\SearchBundle\Search\SearchManager')
             ->addArgument($config["source"]);
+        
+        // Add specific configuration for each type of Provider
+        if (isset($config["orm"])) {
+            // ORM search table
+            $container->setParameter(
+                'gnemes.search.orm.table', 
+                $config['orm']['table']
+            );
+            
+            // ORM search field
+            $container->setParameter(
+                'gnemes.search.orm.field', 
+                $config['orm']['search_field']
+            );
+        }
     }
 }
