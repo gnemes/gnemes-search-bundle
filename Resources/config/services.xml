@@ -6,11 +6,11 @@
 
     <services>
         <service id="gnemes.search.manager" class="Gnemes\SearchBundle\Search\SearchManager">
-            <argument>@service_container</argument>
+            <argument type="service" id="service_container" />
         </service>
         
         <service id="gnemes.search.provider.factory" class="Gnemes\SearchBundle\Provider\ProviderFactory">
-            <argument>@service_container</argument>
+            <argument type="service" id="service_container" />
         </service>
     </services>
 </container>
