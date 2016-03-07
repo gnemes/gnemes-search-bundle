@@ -55,6 +55,7 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+        echo "Container :: ".var_export($this->container, true)."</br>";
         // Init needle entity
         $needle = new Needle();
         
