@@ -42,8 +42,57 @@ use Gnemes\SearchBundle\Interfaces\ProviderInterface;
  */
 class ProviderOrm implements ProviderInterface
 {
+    /**
+     * Table name to search
+     *
+     * @var string
+     */
+    protected $table;
+    
+    /**
+     * Full text indexed field name
+     *
+     * @var string
+     */
+    protected $field;
+    
+    /**
+     * Search for a text into a filed
+     * 
+     * @param string $text Text to search
+     * 
+     * @return array
+     */
     public function search($text)
     {
-        return "Searching on ORM: ".$text;
-    }    
+        return "Searching on ORM: ".$text. " :: Table: ".$this->table." :: Field: ".$this->field;
+    }
+    
+    /**
+     * Set table name
+     * 
+     * @param string $table Table name
+     * 
+     * @return \Gnemes\SearchBundle\Provider\ProviderOrm
+     */
+    public function setTable($table)
+    {
+        $this->table = $table;
+        
+        return $this;
+    }
+    
+    /**
+     * Set field name
+     * 
+     * @param string $field Field name
+     * 
+     * @return \Gnemes\SearchBundle\Provider\ProviderOrm
+     */
+    public function setField($field)
+    {
+        $this->field = $field;
+        
+        return $this;
+    }
 }

@@ -64,6 +64,8 @@ class ProviderFactory
         switch ($source) {
             case "orm":
                 $provider = new ProviderOrm();
+                $provider->setTable($this->container->getParameter("gnemes.search.orm.table"))
+                         ->setField($this->container->getParameter("gnemes.search.orm.field"));
                 break;
             default:
                 $provider = new ProviderElastic();
